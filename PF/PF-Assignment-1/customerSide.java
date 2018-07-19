@@ -2,14 +2,12 @@
  * @author ajay
  * @version 1.8.0_73
  */
-package custormer;
+package Assignment1.ShoppingCart;
 
-import Cart.Cart;
-
+import Assignment1.ShoppingCart.Cart;
 import java.util.*;
-
 import myUtility.inputValidation;
-import product.Product;
+import Assignment1.ShoppingCart.Product;
 
 /**
  * Cart class implements Shopping Cart
@@ -37,8 +35,7 @@ public class customerSide extends Exception {
 		int choice = 0;
 
 		do {
-			System.out
-					.println("****************SHOPPING MALL*****************");
+			System.out.println("****************SHOPPING MALL*****************");
 			System.out.println("ID\tName\tPrice\tQuantity");
 			for (int i = 0; i < productList.size(); i++) {
 				productList.get(i).displayProduct();
@@ -67,14 +64,13 @@ public class customerSide extends Exception {
 				do {
 					prodId = inputValidation.isInt();
 
-					int i = inputValidation.productAvailability(prodId,
-							productList);
+					int i = inputValidation.productAvailability(prodId, productList);
 					if (i > -1) { // check product availability
 
 						int flagForQuantity = 0;
 						do {
 							System.out.println("Enter product quantity: ");
-							prodQuantity = inputValidation.isInt();
+							prodQuantity = inputValidation.isPositiveInt();
 							if (productList.get(i).productQuantity >= prodQuantity) {// check
 																						// product
 																						// quantity
@@ -84,15 +80,13 @@ public class customerSide extends Exception {
 								newProductAdd.productQuantity = prodQuantity;
 								productList.get(i).productQuantity -= prodQuantity;
 							} else if (productList.get(i).productQuantity < prodQuantity) {
-								System.out
-										.println("We don't have this much quantity\nPlease enter again");
+								System.out.println("We don't have this much quantity\nPlease enter again");
 								flagForQuantity = 1;
 							}
 						} while (flagForQuantity == 1);
 						idFlag = 1;
 					} else {
-						System.out
-								.println("We don't have this item. Please select another item.");
+						System.out.println("We don't have this item. Please select another item.");
 
 					}
 				} while (idFlag != 1);
@@ -102,8 +96,7 @@ public class customerSide extends Exception {
 
 			case 2:
 				if (!cartObject.isCartEmpty()) {
-					System.out
-							.print("Enter the product id of product you want to delete: ");
+					System.out.print("Enter the product id of product you want to delete: ");
 					int pidToRemove = inputValidation.isInt();
 					cartObject.removeProduct(pidToRemove);
 
@@ -116,46 +109,29 @@ public class customerSide extends Exception {
 			case 3:
 				if (!cartObject.isCartEmpty()) {
 					Product updatedProduct = new Product();
-					System.out
-							.print("Enter the product id of product you want to update: ");
-					int pidToUpdate = inputValidation.isInt(); // check if id is
+					System.out.print("Enter the product id of product you want to update: ");
+					int pidToUpdate = inputValidation.isInt(); 	// check if id is
 																// integer or
 																// string
-
-					if (cartObject.findProduct(pidToUpdate) > -1) { // check if
+					int itemIndexInCart= cartObject.findProduct(pidToUpdate);
+					if ( itemIndexInCart > -1) { // check if
 																	// product
 																	// is
-						updatedProduct.productId = pidToUpdate; // in cart
-
-						System.out.println("What do you want to update?");
-						System.out.println("1. Name\t2. Cost\t3. Quantity");
-						int choiceOfUpdate = scan.nextInt();
-						switch (choiceOfUpdate) {
-
-						case 1:
-							System.out.print("Enter new name: ");
-							updatedProduct.productName = scan.next();
-							break;
-
-						case 2:
-							System.out.print("Enter new cost: ");
-							updatedProduct.productCost = scan.nextInt();
-							break;
-
-						case 3:
-							System.out.print("Enter new Quantity: ");
-							updatedProduct.productQuantity = scan.nextInt();
-							break;
+						updatedProduct.productId = pidToUpdate; 	// in cart
+						System.out.print("Enter new quantity you want: ");
+						updatedProduct.productQuantity = inputValidation.isInt();
+						int itemIndexInProductList = inputValidation.productAvailability(pidToUpdate, productList);
+						if (productList.get(itemIndexInProductList).productQuantity +cartObject.cart.get(itemIndexInCart).productQuantity >= updatedProduct.productQuantity) {
+							int quantityInProductListAfterUpdate = cartObject.updateProduct(updatedProduct, productList);
+							productList.get(itemIndexInProductList).productQuantity = quantityInProductListAfterUpdate;
 						}
-
-						cartObject.updateProduct(updatedProduct);
+						
 					} else {
-						System.out
-								.println("Sorry! You don't have this item in your cart");
+						System.out.println("Sorry! You don't have this item in your cart");
 					}
 
 				} else {
-					System.out.println("Sorry! Your cart is empty");
+					System.out.println("Sorry! Your cart is empty. First add some product in cart.");
 				}
 				break;
 
@@ -171,8 +147,8 @@ public class customerSide extends Exception {
 			case 5:
 				if (!cartObject.isCartEmpty()) {
 					cartObject.generateBill();
-				}else{
-					System.out.println("Empty cart");
+				} else {
+					System.out.println("Nothing in your cart.");
 				}
 
 			case 6:
