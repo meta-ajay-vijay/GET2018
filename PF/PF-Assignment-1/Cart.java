@@ -1,15 +1,16 @@
-package Cart;
-
-import product.Product;
+package Assignment1.ShoppingCart;
+import Assignment1.ShoppingCart.Product;
 import java.util.ArrayList;
 import java.util.Iterator;
 import myUtility.inputValidation;
 
-;
-
+/**
+ * @author ajayr
+ *
+ */
 public class Cart extends Product {
 
-	ArrayList<Product> cart;
+	public ArrayList<Product> cart;
 
 	public Cart() {
 		cart = new ArrayList<Product>();
@@ -23,13 +24,17 @@ public class Cart extends Product {
 		cart.add(newProduct);
 	}
 
+	/**
+	 * removes the product from cart
+	 * 
+	 * @param prodId
+	 * @return reply boolean value based on the success or failure of operation
+	 */
 	public boolean removeProduct(int prodId) {
-		int indexOfItem = inputValidation.productAvailabilityInCart(prodId,
-				cart);
+		int indexOfItem = inputValidation.productAvailabilityInCart(prodId, cart);
 		boolean reply = false;
 		if (indexOfItem > -1) {
-			System.out.println("Item with "
-					+ cart.remove(indexOfItem).productId + " is removed.");
+			System.out.println("Item with " + cart.remove(indexOfItem).productId + " is removed.");
 			reply = true;
 		} else {
 			System.out.println("You don't have this item in your cart.");
@@ -38,30 +43,27 @@ public class Cart extends Product {
 		return reply;
 	}
 
-	public boolean updateProduct(Product productToUpdate) {
+	/**
+	 * update a given item in cart if it is available in cart
+	 * 
+	 * @param productToUpdate
+	 * @return reply boolean value based on the success or failure of operation
+	 */
+	public int updateProduct(Product productToUpdate, ArrayList<Product> toChangeAfterUpdate) {
 
 		int idOfUpdate = productToUpdate.productId;
-		int indexOfItemToUpdate = inputValidation.productAvailabilityInCart(
-				idOfUpdate, cart);
-		boolean reply = true;
+		int indexOfItemToUpdate = inputValidation.productAvailabilityInCart(idOfUpdate, cart);
+		int remainingQuantity=0;
 		if (indexOfItemToUpdate == -1) {
-			System.out
-					.println("Sorry! Item you want to update is not in your cart");
-			reply = false;
-		} else {
-			if (productToUpdate.productName != null) {
-				cart.get(indexOfItemToUpdate).productName = productToUpdate.productName;
-			}
+			System.out.println("Sorry! Item you want to update is not in your cart");
+			remainingQuantity = toChangeAfterUpdate.get(inputValidation.productAvailability(idOfUpdate, toChangeAfterUpdate)).productQuantity;
+		} else if (productToUpdate.productQuantity != 0) {
+			remainingQuantity = cart.get(indexOfItemToUpdate).productQuantity + 
+					toChangeAfterUpdate.get(inputValidation.productAvailability(idOfUpdate, toChangeAfterUpdate)).productQuantity - productToUpdate.productQuantity;
+			cart.get(indexOfItemToUpdate).productQuantity = productToUpdate.productQuantity;
 
-			if (productToUpdate.productCost != 0.0) {
-				cart.get(indexOfItemToUpdate).productCost = productToUpdate.productCost;
-			}
-
-			if (productToUpdate.productQuantity != 0) {
-				cart.get(indexOfItemToUpdate).productQuantity = productToUpdate.productQuantity;
-			}
 		}
-		return reply;
+		return remainingQuantity;
 
 	}
 
@@ -104,12 +106,11 @@ public class Cart extends Product {
 		System.out.println("Product\tPrice");
 		double totalBill = 0;
 		for (int i = 0; i < cart.size(); i++) {
-			System.out.println(cart.get(i).productName + "\t"
-					+ cart.get(i).productCost + "*"
-					+ cart.get(i).productQuantity);
-			totalBill += cart.get(i).productCost*cart.get(i).productQuantity;
+			System.out.println(
+					cart.get(i).productName + "\t" + cart.get(i).productCost + "*" + cart.get(i).productQuantity);
+			totalBill += cart.get(i).productCost * cart.get(i).productQuantity;
 		}
-		System.out.println("Total:\t"+totalBill);
+		System.out.println("Total:\t" + totalBill);
 	}
 
 	/**
