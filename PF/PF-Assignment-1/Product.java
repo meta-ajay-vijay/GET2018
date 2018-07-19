@@ -1,4 +1,4 @@
-package product;
+package Assignment1.ShoppingCart;
 public class Product {
 		
 		public String productName;
