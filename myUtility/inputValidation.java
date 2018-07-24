@@ -2,73 +2,107 @@ package myUtility;
 
 import Assignment1.ShoppingCart.Product;
 import java.util.*;
-import Assignment1.ShoppingCart.Cart;
+
+/*import Assignment1.ShoppingCart.Cart;
+ import Assignment1.ShoppingCart.customerSide;*/
 
 public class inputValidation {
 
 	static Scanner scan = new Scanner(System.in);
 
+	/*
+	 * public static boolean isString() {
+	 * 
+	 * }
+	 */
+	/**
+	 * Checks whether entered input is of integer type or not
+	 * 
+	 * @return integer type variable choice
+	 */
 	public static int isInt() {
-		int flag, choice = 0;
+		int choice = 0;
+		boolean flag;
 		do {
-
-			try {
+			flag = false;
+			if (scan.hasNextInt()) {
 				choice = scan.nextInt();
-
-				flag = 0;
-			} catch (InputMismatchException e) {
-				flag = 1;
-				System.out.println("Please enter a valid input");
+			} else {
+				flag = true;
+				System.out.println("Please enter a valid integer input");
 				scan.next();
 			}
-		} while (flag != 0);
+		} while (flag);
 
 		return choice;
 	}
 
+	/**
+	 * Checks whether entered input is of positive integer or not
+	 * 
+	 * @return integer variable choice
+	 */
 	public static int isPositiveInt() {
-		int flag = 0, choice = 0;
+		boolean flag;
+		int choice = 0;
 		do {
+			flag = false;
 			try {
-				if (scan.hasNextInt()) {
-					choice = scan.nextInt();
-					if (choice <= 0) {
-						flag = 1;
-						throw new InputMismatchException();
-					}
-				} else {
-					System.out.println("Please enter a valid input");
+				choice = isInt();
+				if (choice <= 0) {
+					throw new Exception("Please Enter Positive Number");
 				}
 
-			} catch (InputMismatchException e) {
-				flag = 1;
-				System.out.println("Please enter a valid input");
+			} catch (Exception e) {
+				flag = true;
+				System.out.println(e.getMessage());
 			}
-		} while (flag != 0);
+		} while (flag);
 
 		return choice;
 	}
 
-	public static int isIntRangeInclusive(int start, int end) {
-		int flag, choice = 0;
+	/**
+	 * 
+	 * Checks whether entered input is in give range or not, If in range then
+	 * accept otherwise do not
+	 * 
+	 * @param start
+	 * @param end
+	 * @return integer variable choice
+	 */
+	public static int isIntInRange(int start, int end) {
+		int choice = 0;
+		boolean flag;
 		do {
-
+			flag = false;
 			try {
-				choice = scan.nextInt();
+				choice = isInt();
 				if (choice < start || choice > end) {
-					flag = 1;
-					throw new InputMismatchException();
+					throw new Exception("Please enter input between "+start+" and "+end);
 				}
-				flag = 0;
-			} catch (InputMismatchException e) {
-				flag = 1;
-				System.out.println("Please enter a valid input");
-
+			} catch (Exception e) {
+				flag = true;
+				System.out.println(e.getMessage());
+				// scan.next();
 			}
-		} while (flag != 0);
+		} while (flag);
 
 		return choice;
 	}
+
+	/*
+	 * public static int isIntRangeInclusive(int start, int end) { int flag,
+	 * choice = 0; do {
+	 * 
+	 * try { choice = scan.nextInt(); if (choice < start || choice > end) { flag
+	 * = 1; throw new Exception("Please enter input in given range"); } flag =
+	 * 0; } catch (Exception e) { flag = 1; System.out.println(e.getMessage());
+	 * 
+	 * } } while (flag != 0);
+	 * 
+	 * return choice; }
+	 */
 
 	public static String isName() {
 		int flag;
@@ -79,9 +113,9 @@ public class inputValidation {
 				choice = scan.nextLine();
 				for (int i = 0; i < choice.length(); i++) {
 					if (!((choice.charAt(i) > 64 && choice.charAt(i) < 91)
-							|| (choice.charAt(i) > 96 && choice.charAt(i) < 123)
-							|| choice.charAt(i) == ' ')) {
-						flag=1;
+							|| (choice.charAt(i) > 96 && choice.charAt(i) < 123) || choice
+								.charAt(i) == ' ')) {
+						flag = 1;
 						throw new InputMismatchException();
 					}
 				}
