@@ -10,18 +10,7 @@ import employee.Employee;
 public class Utility {
 
 	static Scanner scan = new Scanner(System.in);
-
-	public static boolean isValidPosition(String position) {
-		boolean flag = true;
-		for (int i = 0; i < position.length(); i++) {
-			if (position.charAt(i) != 'T' && position.charAt(i) != 'H') {
-				flag = false;
-				break;
-			}
-		}
-		return flag;
-	}
-
+	
 	/**
 	 * Checks whether entered input is of integer type or not
 	 * 
@@ -68,36 +57,12 @@ public class Utility {
 
 		return choice;
 	}
-
+	
 	/**
-	 * 
-	 * Checks whether entered input is in give range or not, If in range then accept
-	 * otherwise do not
-	 * 
-	 * @param start
-	 * @param end
-	 * @return integer variable choice
-	 */
-	public static int isIntInRange(int start, int end) {
-		int choice = 0;
-		boolean flag;
-		do {
-			flag = false;
-			try {
-				choice = isInt();
-				if (choice < start || choice > end) {
-					throw new Exception("Please enter input between " + start + " and " + end);
-				}
-			} catch (Exception e) {
-				flag = true;
-				System.out.println(e.getMessage());
-				// scan.next();
-			}
-		} while (flag);
-
-		return choice;
-	}
-
+	*  method takes the employee id in input and checks that
+	*  it is given to an employee or not, If not then accept 
+	*  otherwise tells user to enter employee id again.
+	*/
 	public static int isValidEmployee(List<Employee> listOfEmployees) {
 		int employeeId;
 		boolean flag;
