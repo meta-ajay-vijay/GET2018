@@ -25,7 +25,7 @@ public class Utility {
 				choice = scan.nextInt();
 			} else {
 				flag = true;
-				System.out.println("Please enter a integer");
+				System.out.println("Please enter an integer");
 				scan.next();
 			}
 		} while (flag);
@@ -75,7 +75,7 @@ public class Utility {
 			try {
 				choice = isInt();
 				if (choice < start || choice > end) {
-					throw new Exception("Please enter input between " + start + " and " + end);
+					throw new Exception("Please enter an integer between " + start + " and " + end);
 				}
 			} catch (Exception e) {
 				flag = true;
