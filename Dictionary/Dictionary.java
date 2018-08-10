@@ -42,7 +42,7 @@ public interface Dictionary {
 	 * 
 	 * @return List of sorted dictionary elements
 	 */
-	public List<Dictionary> sortedDictionary();
+	public List<BST> sortedDictionary(BST parentNode);
 
 	/**
 	 * return sorted dictionary from fromKey(inclusive) to toKey (inclusive)
