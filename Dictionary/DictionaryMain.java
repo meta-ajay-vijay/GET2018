@@ -3,6 +3,7 @@
  */
 package Dictionary;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -53,34 +54,41 @@ public class DictionaryMain {
 				break;
 
 			case 2:
-
+				System.out.println("Abhi iska code nahi likha :)");
 				break;
 
 			case 3:
 				System.out.println("Enter the word");
 				String wordWhichMeaningUserWantToKnow = Utility.isAWord();
-				
+
 				booleanAndString result = dictionary.getValueFromDictionary(wordWhichMeaningUserWantToKnow);
-				if(result.getFlag()) {
+				if (result.getFlag()) {
 					System.out.println("Meaning of word is");
 					System.out.println(result.getMessage());
 				} else {
 					System.out.println(result.getMessage());
 				}
-				
+
 				break;
 
 			case 4:
-
+				if (dictionary.rootOfDictionary != null) {
+					List<BST> sortedWordsFromDictionary = dictionary.sortedDictionary(dictionary.rootOfDictionary);
+					for (int index = 0; index < sortedWordsFromDictionary.size(); index++) {
+						System.out.println(sortedWordsFromDictionary.get(index).toString());
+					}
+				} else {
+					System.out.println("Dictionary is empty!");
+				}
 				break;
 
 			case 5:
-
+				System.out.println("Abhi iska code nahi likha :)");
 				break;
 
 			case 6:
-				System.exit(0);
 				System.out.println("Bye! See you later");
+				System.exit(0);
 				break;
 			}
 
