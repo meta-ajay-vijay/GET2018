@@ -1,0 +1,30 @@
+1	sankalp.7vyas@gmail.com	Sankalp	Vyas	1995-11-07	rajusrivastav	admin
+
+2	vijay.dinanath.chouhan@gmail.com	Vijay	Chouhan	1995-11-07	rajusrivastav	shopper
+
+3	sunny.deol@gmail.com	Sunny	Deol	1995-11-07	rajusrivastav	shopper
+
+4	virat.kohli@gmail.com	Virat	Kohli	1995-11-07	rajusrivastav	shopper
+
+5	rajesh.yadav@gmail.com	Rajesh	Yadav	1995-11-07	rajusrivastav	shopper
+
+6	krishin.gupta@gmail.com	Krishin	Gupta	1995-11-07	rajusrivastav	shopper
+
+7	srishti.acharya@gmail.com	Srishti	Acharya	1995-11-07	rajusrivastav	shopper
+
+8	sunil.shetty@gmail.com	Sunil	Shetty	1995-11-07	rajusrivastav	shopper
+
+9	sukanya.sharma@gmail.com	Sukanya	Sharma	1995-11-07	rajusrivastav	shopper
+
+10	sarvesh.saransh@gmail.com	Sarvesh	Saransh	1995-11-07	rajusrivastav	shopper
+
+11	vijay.Malya@gmail.com	Vijay	Malya	1995-11-07	rajusrivastav	shopper
+
+12	adinath.vyas@gmail.com	Adinath	Vyas	1995-11-07	rajusrivastav	shopper
+
+13	ganja.cocaine@gmail.com	Utkarsh	Mundra	1995-11-07	rajusrivastav	shopper
+
+14	rockstar.srk@gmail.com	Ajay	Vijay	1995-11-07	rajusrivastav	shopper
+
+15	amitabh.bacchan@gmail.com	Amitabh	Bacchan	1995-11-07	rajusrivastav	shopper
+
