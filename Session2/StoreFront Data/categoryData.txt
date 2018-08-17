@@ -1,0 +1,29 @@
+1	Fashion	0
+
+2	Electronics	0
+
+3	Medicines	0
+
+4	Sports	0
+
+5	Games	0
+
+6	Toys	0
+
+7	Watches	1
+
+8	Clothes	1
+
+9	Shoes	1
+
+10	Mobiles	2
+
+11	Washing Machines	2
+
+12	LG TV	2
+
+13	Shirts	8
+
+14	Jeans	8
+
+15	Cricket	4
