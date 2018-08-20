@@ -1,0 +1,5 @@
+1	Shopper
+2	Admin
+3	Employee
+4	Developer
+5	Dealer
