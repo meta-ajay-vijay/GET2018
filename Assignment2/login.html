@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>log in</title>
+	<script src = './scripts/sign_up.js'></script>
+</head>
+<body>
+<!--this table is for heading-->
+	<table style= 'width:60%' align= 'center'>
+		<tr>
+			<td >
+				<img src = './images/logo.png' width = 10%>
+			</td>
+			
+			<td>
+				<a href = 'home.html'>Home</a>
+				<a href = '#'>About</a>
+				<a href = 'login.html'>Login</a>
+				<a href = 'sign_up.html'>Sign up</a>
+				<a href = 'contact_us.html'>Contact</a>
+			</td>
+			
+		</tr>
+	</table>
+	<hr style = 'width:70%'> <br />
+<!--heading able ends here-->	
+
+	<h1 align = 'center'>Login Page</h1><br />
+	<form id = 'signup' action = 'profile.html' method = 'post'>
+		<table width = 50% align = 'center'>
+			<tr>
+				<td align = 'right'>Email:</td>
+				<td>
+					<input type = 'text' name = 'email' id = 'email' onblur = 'isEmailValid()' required>
+					<span id = 'email_message'></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = 'right'>Password:</td>
+				<td>
+					<input type = 'password' name = 'password' id='password' onblur = 'isPasswordValid()' required>
+					<span id = 'password_message' style = 'color:red'></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td align="left">
+					<input type="checkbox" onclick="showPassword()">show paassword
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type = 'submit' value = 'login'>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+</body>
+</html>

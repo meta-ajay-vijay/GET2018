@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up</title>
+	<script src = './scripts/sign_up.js'></script>
+</head>
+<body>
+<!--this table is for heading-->
+	<table style= 'width:60%' align= 'center'>
+		<tr>
+			<td >
+				<img src = './images/logo.png' width = 10%>
+			</td>
+			
+			<td>
+				<a href = 'home.html'>Home</a>
+				<a href = '#'>About</a>
+				<a href = 'login.html'>Login</a>
+				<a href = 'sign_up.html'>Sign up</a>
+				<a href = 'contact_us.html'>Contact</a>
+			</td>
+			
+		</tr>
+	</table>
+	<hr style = 'width:70%'> <br />
+<!--heading able ends here-->	
+
+	<h1 align = 'center'>Sign up</h1><br />
+	<form id = 'signup' action = 'login.html' method = 'post'>
+		<table width = 50% align = 'center'>
+			<tr>
+				<td align = 'right'>First Name:</td>
+				<td>
+					<input type = 'text' name = 'First Name' id = 'first_name' onblur = 'isNameValid(this.id)' required>
+					<span id = 'first_name_message'></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = 'right'>Last Name:</td>
+				<td>
+					<input type = 'text' name = 'Last Name' id = 'last_name' onblur = 'isNameValid(this.id)' required>
+					<span id = 'last_name_message'></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = 'right'>Email:</td>
+				<td>
+					<input type = 'text' name = 'email' id = 'email' onblur = 'isEmailValid()' required>
+					<span id = 'email_message'></span>
+				</td>
+			</tr>
+
+			<tr>
+				<td align = 'right'>Password:</td>
+				<td>
+					<input type = 'password' name = 'password' id='password' onblur = 'isPasswordValid()' required>
+					<span id = 'password_message' style = 'color:red'></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td align="left">
+					<input type="checkbox" onclick="showPassword()">show paassword
+				</td>
+			</tr>
+			<tr>
+				<td align = 'right'>Confirm Password:</td>
+				<td>
+					<input type = 'password' name = 'confirm password' id = 'confirm_password' onblur='isConfirmPasswordValid()' required>
+					<span id='confirm_password_message'></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = 'right'>Contact:</td>
+				<td>
+					<input type = 'text' name = 'contact' id= 'contact' onblur='isContactValid()' required> 
+					<span id = 'contact_message'></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align = 'right'>Company:</td>
+				<td>
+					<select>
+						<option value = 'metacube'>metacube</option>
+						<option value = 'google'>google</option>
+						<option value = 'facebook'>facebook</option>
+						<option value = 'amazon'>amazon</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>	
+					<br />
+				</td>
+				
+				<td>
+					<br />
+					<input type = 'button' value = 'submit' onclick = 'checkAll()'>
+				</td>
+				
+			</tr>
+		
+		</table>
+	</form>
+	
+	
+</body>
+</html>
