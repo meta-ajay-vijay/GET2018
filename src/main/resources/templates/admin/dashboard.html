@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>projects</title>
+
+</head>
+<body>
+<h1 th:text = "${username}">userNames</h1>
+
+	<a th:href="@{./projects}">Projects</a>
+	<br>
+	<a th:href="@{./skills}">Skills</a>
+	<br>
+	<a th:href="@{./jobs}">Job titles</a>
+	<br>
+	<a th:href="@{./employees}">Employees</a>
+	<br>
+	<a th:href="@{./logout}">LogOut</a>
+</body>
+</html>

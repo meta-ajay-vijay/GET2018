@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>add employee Details</title>
+
+</head>
+<body>
+	<div>
+		<form th:object="${employee}" th:action="@{./edit}" method="post">
+			<input type="hidden" th:field="*{empCode}" />
+			<table>
+				<tr>
+					<td><label>First Name:</label></td>
+					<td><input type="text" th:field="*{firstName}" /></td>
+				</tr>
+				<tr>
+					<td><label>Last Name</label></td>
+					<td><input type="text" th:field="*{lastName}" /></td>
+				</tr>
+				<tr>
+					<td><label>DOB:</label></td>
+					<td><input type="text" th:field="*{dob}" /></td>
+				</tr>
+				<tr>
+					<td><label>email:</label></td>
+					<td><input type="email" th:field="*{emailId}" /></td>
+				</tr>
+				<tr>
+					<td><label>Primary Contact Number:</label></td>
+					<td><input type="tel" th:field="*{primaryContactNumber}" /></td>
+				</tr>
+				<tr>
+					<td><label>Secondary Contact Number:</label></td>
+					<td><input type="tel" th:field="*{secondaryContactNumber}" /></td>
+				</tr>
+				<tr>
+					<td><label>Skype Id:</label></td>
+					<td><input type="email" th:field="*{skypeId}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button type="submit">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<a th:href="@{./showProfile}">Back</a>
+</body>
+</html>

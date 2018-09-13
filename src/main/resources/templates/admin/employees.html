@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employees</title>
+</head>
+<body>
+
+<a th:href = "@{employee}">Add employee</a>
+<div class="container">
+
+     <div th:if="${not #lists.isEmpty(employees)}">
+        <h2>All employees</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>EmpCode</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Email Id</th>
+                <th>Skype Id</th>
+                <th>Primary Contact Number</th>
+                <th>Secondary Contact Number</th>
+            </tr>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.empCode}">EmpCode</td>
+                <td th:text="${employee.firstName}">First Name</td>
+                <td th:text="${employee.lastName}">Last Name</td>
+                <td th:text="${employee.dob}">DOB</td>
+                <td th:text="${employee.gender}">Gender</td>
+                <td th:text="${employee.emailId}">Email Id</td>
+                <td th:text="${employee.skypeId}">Skype Id</td>
+                <td th:text="${employee.primaryContactNumber}">Primary Contact Number</td>
+                <td th:text="${employee.secondaryContactNumber}">Secondary Contact Number</td>
+            </tr>
+        </table>
+    </div>
+    <a th:href = "@{back}">Back</a>
+ </div>
+</body>
+</html>

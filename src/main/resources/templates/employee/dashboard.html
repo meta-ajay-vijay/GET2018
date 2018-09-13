@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>EMPLOYEE DASHBOARD</title>
+
+</head>
+<body>
+<h1 th:text = "${username}">userNames</h1>
+
+	<a th:href="@{./showProfile}">show profile</a>
+	<br>
+	
+	<a th:href="@{./searchEmployee}">search employee</a>
+	<br>
+	
+	
+	<a th:href="@{./logout}">LogOut</a>
+</body>
+</html>
