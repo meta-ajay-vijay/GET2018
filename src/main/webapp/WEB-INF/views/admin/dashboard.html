@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Admin Dashboard</title>
+
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<h3 th:text = "${username}">userNames</h3>
+
+	<a th:href="@{./projects}">add project</a>
+	<br>
+	<a th:href="@{./skills}">add skills</a>
+	<br>
+	<a th:href="@{./jobs}">add job title</a>
+	<br>
+	<a th:href="@{./employee}">add Employee</a>
+	<br>
+	<a th:href="@{./searchEmployee}">search employee</a>
+	<br>
+	<br>
+		<a th:href="@{../search}">searchBySkills</a>
+	
+	<a th:href="@{./logout}">LogOut</a>
+</body>
+</html>

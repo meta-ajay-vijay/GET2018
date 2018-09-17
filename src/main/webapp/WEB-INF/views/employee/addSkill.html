@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>add skills</title>
+
+</head>
+<body>
+	<div>
+	    <h2>Add skills</h2>
+	
+	
+		<form  th:action="@{./addSkill}" method="post">
+             <label>Skill</label>
+                  <select th:name="skills" multiple>
+                     <option th:each="skill : ${skillList}"
+                        th:value="${skill.id}"
+                        th:utext="${skill.name}"/>
+             </select>
+			<button type="submit" class="btn btn-primary">Save</button>
+
+		</form>
+	</div>
+</body>
+</html>

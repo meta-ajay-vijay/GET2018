@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Edit project Details</title>
+
+</head>
+<body>
+	<div>
+	    <h2>Add/Edit project Details</h2>
+		<form th:object="${project}" th:action="@{../projects}" method="post">
+			<input type="hidden"  th:field="*{id}" />
+			<br>
+			 <label>Name:</label> 
+			 <input type="text" th:field="*{name}" required/> 
+				<br>
+			<label>Description:</label> 
+			<input type="text"  th:field="*{description}" required/> 
+				<br>
+			<label>Start Date:</label> 
+			<input type="text"  th:field="*{startDate}" required/> 
+			<br>
+			<label>End Date:</label> 
+			<input type="text" th:field="*{endDate}" />
+			<button type="submit" class="btn btn-primary">Save</button>
+
+		</form>
+	</div>
+</body>
+</html>

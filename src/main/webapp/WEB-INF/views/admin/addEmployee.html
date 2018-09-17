@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Add Employee Details</title>
+
+</head>
+<body>
+	<div>
+	    <h2>Add employee details</h2>
+	
+	
+		<form th:object="${employee}" th:action="@{./employee}" method="post">
+			<input type="hidden"  th:field="*{empCode}" />
+			<br>
+			 <label>First Name:</label> 
+			 <input type="text" th:field="*{firstName}" /> 
+				<br>
+			<label>Last Name</label> 
+			<input type="text"  th:field="*{lastName}" /> 
+				<br>
+			<label>DOB:</label> 
+			<input type="text"  th:field="*{dob}" /> 
+			<br>
+			<label>email:</label> 
+			<input type="text" th:field="*{emailId}" />
+			<br>
+			<label>gender:</label>
+		    <select th:field="*{gender}">
+                     <option value=""> -- </option>
+                     <option value="M">Male</option>
+                     <option value="F">Female</option>
+             </select>
+              <br>
+              <label>Job</label>
+                  <select th:field="*{jobTitle}">
+                     <option value=""> -- </option>
+                     <option th:each="job : ${jobs}"
+                        th:value="${job.id}"
+                        th:utext="${job.jobTitle}"/>
+                  </select>
+               <br>   
+             <label>project</label>
+                  <select th:field="*{projectTitle}">
+                     <option value=""> -- </option>
+                     <option th:each="project : ${projects}"
+                        th:value="${project.id}"
+                        th:utext="${project.name}"/>
+             </select>
+             <br>
+			<label>Team leader</label>
+                  <select th:field="*{teamLeader}">
+                     <option value=""> -- </option>
+                     <option th:each="employee : ${teamLeaders}"
+                        th:value="${employee.empCode}"
+                        th:utext="${employee.firstName}"/>
+             </select>
+             <br>
+             <label>Manager</label>
+                  <select th:field="*{manager}">
+                     <option value=""> -- </option>
+                     <option th:each="employee : ${managers}"
+                        th:value="${employee.empCode}"
+                        th:utext="${employee.firstName}"/>
+             </select>
+			<button type="submit" class="btn btn-primary">Save</button>
+
+		</form>
+	</div>
+</body>
+</html>
