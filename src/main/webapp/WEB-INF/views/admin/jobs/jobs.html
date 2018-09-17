@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="ISO-8859-1">
+<title>Jobs</title>
+</head>
+<body>
+<div class="container">
+	  <a th:href="@{jobs/add}"> Add Job </a>
+    <div th:if="${not #lists.isEmpty(jobs)}">
+        <h2>All Jobs</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            <tr th:each="job : ${jobs}">
+                <td th:text="${job.id}">Id</td>
+                <td th:text="${job.name}">Description</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Search Employee</title>
+<script>
+	function toggleName(){
+	 document.getElementById("nameId").style.display = "block";
+	}
+	function toggleTotalExperience(){
+		 document.getElementById("totalExpId").style.display = "block";
+		}
+	function toggleProject(){
+		 document.getElementById("projectId").style.display = "block";
+		}
+	function toggleSkill(){
+		 document.getElementById("skillId").style.display = "block";
+		}
+</script>
+</head>
+<body>
+<h1>Search An Employee</h1>
+<table>
+<tr>
+<td>Name:</td>
+<td><input type="button" onclick="toggleName()" value="Search By Name"></td>
+<td>
+	<form name="name" id="nameId" style="display:none">
+		<input  type="text"  name="Name" />
+		<input type="submit" value="Search" /></td>
+	</form>
+</td>
+</tr>
+<tr>
+<td>Total Expeirence:</td>
+<td><input type="button" onclick="toggleTotalExperience()" value="Search By Total Expierience"></td>
+<td>
+		<form name="totalExp" id="totalExpId" style="display:none">
+			<input type="text"  name="totExp" />
+			<input type="submit" value="Search" /></td>
+		</form>
+</td>
+</tr>
+<tr>
+<td>Project:</td>
+<td><input type="button" onclick="toggleProject()"  value="Search By Project Name"></td>
+<td>
+		<form name="project" id="projectId" style="display:none" >
+			<input type="text" name="project" />
+			<input type="submit" value="Search" /></td>
+		</form>
+</td>
+</tr>
+<tr>
+<td>Skill:</td>
+<td><input type="button" onclick="toggleSkill()" value="Search By Skill"></td>
+<td>
+	<form name="skill" id="skillId" style="display:none" th:action="@{./searchEmployeeBySkill}"  method="post">
+			 <select name="skillIdSelect">
+                    <option th:each="skill : ${skillList}"
+                       th:value="${skill.id}"
+                       th:utext="${skill.name}"/>
+            </select>
+			<input type="submit" value="Search" /></td>
+	</form>
+</td>
+</tr>
+</table>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(employees)}">
+        <h2>All Employees</h2>
+        <table class="table table-striped" >
+            <tr>
+                <th width=10%>Id</th>
+                <th width=20%>Name</th>
+                <th width=20%>Email Id</th>
+                <th width=15%>Date Of Birth</th>
+                <th width=15%>Date Of Joining</th>
+                <th width=5%>Gender</th>
+                <th width=15%>Contact</th>
+            </tr>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.empCode}" align="center">Id</td>
+                <td th:text="${employee.firstName}" align="center"> Name</td>
+                <td th:text="${employee.emailId}" align="center">Email Id</td>
+                <td th:text="${employee.dob}" align="center">Date Of Birth</td>
+                <td th:text="${employee.dateOfJoining}" align="center">Date Of Joining</td>
+                <td th:text="${employee.gender}" align="center">Gender</td>
+                <td th:text="${employee.contactNumber}" align="center">Contact</td>
+                <td><a th:href="${'employees/enable?empCode=' + employee.empCode}" class="btn btn-default">Enable</a></td>
+                <td><a th:href="${'employees/disable?empCode=' + employee.empCode}" class="btn btn-danger">Disable</a></td>
+            </tr>
+        </table>
+    </div>
+</div>	
+</body>
+</html>
