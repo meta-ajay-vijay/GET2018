@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Admin Dashboard</title>
+
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<h3 th:text = "${username}">userNames</h3>
+
+	<a th:href="@{./projects}">add project</a>
+	<br>
+	<a th:href="@{./skills}">add skills</a>
+	<br>
+	<a th:href="@{./jobs}">add job title</a>
+	<br>
+	<a th:href="@{./employee}">add Employee</a>
+	<br>
+	<a th:href="@{./searchEmployee}">search employee</a>
+	<br>
+	<a th:href="@{./searchBySkill}">searchBySkills</a>
+	<br>
+<!-- 	<a th:href="@{./logout}">LogOut</a>
+ -->
+	<form th:action="@{/logout}" method="post">
+		<input type="hidden" th:name="${_csrf.parameterName}"
+			th:value="${_csrf.token}" /> <input type="submit" value="LogOut" />
+	</form>
+
+</body>
+</html>
