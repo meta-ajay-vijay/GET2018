@@ -1,0 +1,57 @@
+.main {
+    height: 100%;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 250 auto;
+}
+
+.pattern-square {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    animation: rotate-square 2s infinite;
+    box-shadow: 5px 10px 8px #666666;
+}
+
+#pattern-square-1 {
+    background-color: red;
+    animation-delay: 0s;
+}
+
+#pattern-square-2 {
+    background-color: yellow;
+    animation-delay: -0.5s;
+}
+
+#pattern-square-3 {
+    background-color: blue;
+    animation-delay: -1s;
+}
+
+#pattern-square-4 {
+    background-color: purple;
+    animation-delay: -1.5s;
+}
+
+@keyframes rotate-square {
+    0% {
+        transform: translate(0px,0px);
+    }
+    25% {
+        transform: translate(0px,100px);
+    }
+    50% {
+        transform: translate(100px,100px);
+    }
+    75% {
+        transform: translate(100px,0px);
+    }
+    100% {
+        transform: translate(0px,0px);
+    }
+}
