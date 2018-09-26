@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Employee Profile</title>
+    
+</head>
+<body>
+<h1>Employee Profile</h1>
+<div class="container">
+<table>
+	<tr>
+		<td>
+			Code : 
+		</td>
+		<td>
+			<h3 th:text="${employees.empCode}">code</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			First Name :
+		</td>
+		<td>
+			<h3 th:text="${employees.firstName}">first name</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Last Name :
+		</td>
+		<td>
+			<h3 th:text="${employees.lastName}">last name</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Email Id :
+		</td>
+		<td>
+			<h3 th:text="${employees.emailId}">email id</h3>
+		</td>
+	</tr>
+
+</table>
+    </div>
+ <a th:href="@{./back}">Back</a>
+</body>
+</html>

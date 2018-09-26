@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>My Profile</title>
+    
+</head>
+<body>
+<h1>My Profile</h1>
+<div class="container">
+<form th:object="${employees}" th:action="@{./edit}" method="post">
+<table>
+	<tr>
+		<td>
+			Code : 
+		</td>
+		<td>
+			<h3 th:text="${employees.empCode}">code</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			First Name :
+		</td>
+		<td>
+			<h3 th:text="${employees.firstName}">first name</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Last Name :
+		</td>
+		<td>
+			<h3 th:text="${employees.lastName}">last name</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Email Id :
+		</td>
+		<td>
+			<h3 th:text="${employees.emailId}">email id</h3>
+		</td>
+	</tr>
+	<a th:href="${'./edit?empCode=' + employees.empCode}" class="btn btn-default">Edit</a>
+
+</table>
+</form>
+</div>
+<br>
+<a th:href="@{./back}">Back</a>
+</body>
+</html>

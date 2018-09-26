@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Employee</title>
+    
+</head>
+<body>
+
+<a th:href = "@{employee/add}">add employee</a>
+<div class="container">
+
+     <div th:if="${not #lists.isEmpty(employee)}">
+        <h2>All Employee</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>EmpCode</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Date of Birth</th>                                       
+                <th>Gender</th>
+                <th>Primary Contact Number</th>
+                <th>Secondary Contact Number</th>
+                <th>Email</th>
+                
+            </tr>
+            <tr th:each="employee : ${employee}">
+                <td th:text="${employee.empCode}">EmpCode</td>
+                <td th:text="${employee.firstName}">FirstName</td>
+                <td th:text="${employee.lastName}">LastName</td>
+               <td th:text="${employee.dob}">Date of Birth</td>                
+                 <td th:text="${employee.gender}">Gender</td>
+                 <td th:text="${employee.primaryContactNumber}">Primary Contact Number</td> 
+                 <td th:text="${employee.secondaryContactNumber}">Secondary Contact Number</td>                               
+                <td th:text="${employee.emailId}">Email</td>                            
+            </tr>
+        </table>
+    </div>
+ </div>
+ <a th:href="@{./back}">Back</a>
+</body>
+</html>

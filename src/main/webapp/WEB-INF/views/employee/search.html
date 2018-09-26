@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Employee Search</title>
+
+</head>
+<body>
+	<div class="container">
+		<h2>Search Employee</h2>
+		<form th:action="@{../employee/searchEmployee}" method=post>
+			<label>Employee Id: 
+			</label> <input th:type="text" name="search"
+				required="required"> <br /> <input type="submit"
+				value="Search">
+		</form>
+	</div>
+<a th:href="@{./back}">Back</a>
+</body>
+</html>
