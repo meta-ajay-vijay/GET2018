@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Form
+	</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styling.css">
+</head>
+<body>
+	<header>
+		<h1>Contact Us Today!</h1>
+	</header>
+	<section id="contactForm">
+		<div id="contactFormDiv">
+		<form id="contactUs" action="form.html" method="post">
+			<div class="formRow">
+				<div class="formLabel">
+					<label> First Name </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-user fa-2x"></i>
+					<input type="text" name="firstName" autofocus required pattern="^[A-Za-z]{2,}$"  placeholder="First Name">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Last Name </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-user fa-2x"></i>
+					<input type="text" name="lastName" required pattern="^[A-Za-z]{2,}$" placeholder="Last Name">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Email </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-envelope fa-2x"></i>
+					<input type="email" name="email" required pattern="^[A-Za-z0-9]*[A-Za-z0-9._]+@[A-Za-z0-9]+[.]+(([a-z0-9.]{3,4})){1,}$" placeholder="Email">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Phone Number #</label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-phone fa-2x"></i>
+					<input type="tel" name="mobileNumber" required pattern="[\d]{10}" placeholder="Phone Number">
+				</div>
+			</div>
+			<div class="formRow">
+				<div  class="formLabel">
+					<label> Address</label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-home fa-2x"></i>
+					<input type="text" name="address" required pattern="^[A-Za-z0-9'\.\-\s\,]$" placeholder="Address">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> City</label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-home fa-2x"></i>
+					<input type="text" name="city" required pattern="^[A-Za-z]{2,}$" placeholder="City">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> State </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-server fa-2x"></i>
+					<select required>
+						<option disabled selected value><-Select Option-></option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Goa">Goa</option>
+						<option value="Assam">Assam</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Nagaland">Nagaland</option>
+					</select>
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel ">
+					<label> Zip Code</label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-home fa-2x"></i>
+					<input type="text" name="zipCode" required  pattern="[0-9]{6,}" placeholder="Zip Code">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Website or Domain Name </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-globe fa-2x"></i>
+					<input type="text" name="website" required pattern="^[A-Za-z0-9]*[A-Za-z0-9._]+@[A-Za-z0-9]+[.]+(([a-z0-9.]{3,4})){1,}$" placeholder="Website Or Domain Name">
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Do You Have Hosting? </label>
+				</div>
+				<div class="formTextValue" id="radioInput">
+					<input type="radio" name="question" value="true" required> Yes
+					<input type="radio" name="question" value="false"> No
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+					<label> Project Description </label>
+				</div>
+				<div class="formTextValue">
+					<i class="fa fa-pencil fa-2x" id="textareaIcon"></i>
+					<textarea name="projectDescription" placeholder="Project Description" rows="3"></textarea>
+				</div>
+			</div>
+			<div class="formRow">
+				<div class="formLabel">
+				</div>
+				<div class="formTextValue" id="sendIcon">
+					<button type="submit" form="contactUs"> Send <i class="fa fa-paper-plane"></i></button>
+				</div>
+			</div>
+		</form>
+		</div>
+	</section>
+	<footer>
+	</footer>
+</body>
+</html>

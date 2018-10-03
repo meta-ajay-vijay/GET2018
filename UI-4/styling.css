@@ -1,0 +1,85 @@
+body{
+	background-color:hsl(0, 0%, 94%);
+	font-family:verdana;
+}
+
+#contactFormDiv{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	flex-direction:column;
+}
+
+.formRow {
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+	margin:10px 150px 0px;
+}
+
+.formLabel{
+	width:45%;
+	text-align:right;
+	padding:5px 50px 5px 5px;
+	font-size:22px;
+}
+
+.formTextValue{
+	width:45%;
+	text-align:left;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row;
+}
+
+.formTextValue i{
+	width:5%;
+	padding:5px 5px 5px 5px;
+	text-align:center;
+	border:.5px solid hsl(0, 0%, 80%);
+	background-color:hsl(0, 0%, 85%);
+}
+
+input,textarea,select{
+	 width:40%;
+	 border-radius:3px;
+	 resize: none;
+	 border-left:none;
+}
+
+.formTextValue #textareaIcon {
+	padding:20px 5px 20px 5px;
+}
+
+
+#sendIcon button{
+	background-color:hsl(39, 100%, 50%);
+	text-align:left;
+}
+
+button {
+	border-radius:4px;
+	color:white;
+	font-size:30px;
+}
+
+#radioInput input{
+	 width:2%;
+}
+
+#sendIcon i{
+	border:none;
+	background-color:hsl(39, 100%, 50%);
+}
+
+input:focus:required:invalid {
+  /* insert your own styles for invalid form input */
+  -moz-box-shadow: none;
+  border:2px solid red;
+}
+
+input:required:valid {
+  /* insert your own styles for valid form input */
+   -moz-box-shadow: none;
+   border:2px solid green;
+}

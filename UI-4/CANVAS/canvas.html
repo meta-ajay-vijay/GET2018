@@ -1,0 +1,88 @@
+<html>
+<body>
+<head>
+    <!-- <link rel="stylesheet" href="Stylesheet/canvas-style.css" /> -->
+</head>
+<canvas id="myCanvas" width="800" height="500" >
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    //blue circle
+    ctx.fillStyle="dodgerblue";
+    ctx.beginPath();
+    ctx.arc(100,100,100,0,2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+
+    //half blue
+    ctx.fillStyle="dodgerblue";
+    ctx.beginPath();
+    ctx.arc(350,100,100,Math.PI*0.5,-Math.PI*0.5);
+    ctx.closePath();
+    ctx.fill();
+
+    //half stroke
+    ctx.fillStyle="transparent";
+    ctx.beginPath();
+    ctx.arc(350,100,95,-Math.PI*0.5,Math.PI*0.5);
+    ctx.lineWidth=10;
+
+    ctx.strokeStyle = "grey";
+    ctx.stroke();
+
+    ctx.closePath();
+    ctx.fill();
+
+    //purple stroke circle
+    ctx.fillStyle="transparent";
+    ctx.beginPath();
+    ctx.arc(600,100,95,0,2*Math.PI);
+    ctx.lineWidth=10;
+
+    ctx.strokeStyle = "purple";
+    ctx.stroke();
+
+    ctx.closePath();
+    ctx.fill();
+
+    //orange circle
+    ctx.fillStyle="orange";
+    ctx.beginPath();
+    ctx.arc(100,325,100,0,2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+
+    //white plus
+    ctx.fillStyle="white";
+    ctx.beginPath();
+    
+    ctx.fillRect(20,300,150,50);
+    ctx.fillRect(70,250,50,150);
+    
+    ctx.closePath();
+    ctx.fill();
+
+    //purple triangle
+    ctx.fillStyle="purple";
+    ctx.beginPath();
+    ctx.moveTo(350,240);
+    ctx.lineTo(250,420);
+    ctx.lineTo(450,420);
+    ctx.closePath();
+    ctx.fill();
+
+    //green square
+    ctx.fillStyle="green";
+    ctx.beginPath();
+    
+    ctx.fillRect(520,240,180,180);
+    ctx.closePath();
+    ctx.fill();
+
+</script>
+</body>
+</html>
