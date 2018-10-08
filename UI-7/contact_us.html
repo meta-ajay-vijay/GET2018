@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href = "style/contact_us.css">
+<script src="js/script.js"></script>
+<script src="js/valid.js"></script>
+</head>
+<body>
+
+<form method="post" id = 'contact-us' action="details.html">
+  <div id = "form-input-elements">  
+        <p>Contact Us Today!</p>
+        <div class="input-container">
+            <div class="label">
+                <label>First Name</label>
+            </div>
+            <i class="fa fa-user icon"></i>
+            <input class="input-field" type="text" placeholder="First Name" name="first_name" id = 'first_name'>
+        </div>
+
+        <div class="input-container">
+            <div class="label">
+                <label>Last Name</label>
+            </div>
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field"  type="text" placeholder="Last Name" name="last_name" id = 'last_name'>
+        </div>
+        
+        <div class="input-container">
+            <div class="label">
+                <label>E-mail</label>
+            </div>
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field" type="text" placeholder="E-Mail Address" name="email" id='email'>
+        </div>
+
+        <div class="input-container">
+                <div class="label">
+                    <label>Phone #</label>
+                </div>
+                <i class="fa fa-phone icon"></i>
+                <input class="input-field" type="text" placeholder="(852)555-1212" name="phone" id = 'contact'>
+        </div>
+        
+            <div class="input-container">
+                <div class="label">
+                    <label>Address</label>
+                </div>
+                <i class="fa fa-home icon"></i>
+                <input class="input-field"  type="text"  placeholder="Address" name="address" id = 'address'>
+            </div>
+            
+            <div class="input-container">
+                <div class="label">
+                    <label>City</label>
+                </div>
+                <i class="fa fa-home icon"></i>
+                <input class="input-field" type="text" placeholder="City" name="city" id = 'city'>
+            </div>
+
+            <div class="input-container">
+                <div class="label">
+                    <label>State</label>
+                </div>
+                <i class="fa fa-server icon"></i>
+                <select name="state" id = "state" onchange="stateChange(this.value)">
+                    <option selected disabled>Please Select Your State</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Hariyana">Hariyana</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <a href="#" onclick="checkValidity()"><button  class="btn" >Send<i class="fa fa-paper-plane-o btn-icon"></i></button></a>
+            </div>    
+    </div>  
+</form>
+
+</body>
+</html>

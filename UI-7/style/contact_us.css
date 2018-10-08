@@ -1,0 +1,108 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ebe6e6e7
+    }
+* {box-sizing: border-box;}
+
+.label{
+    display: flex;
+    width:40%;
+    padding:4px 25px; 
+    font-weight: 750;
+    font-size: 13px;
+    justify-content: flex-end;
+}
+
+.label p{
+    text-align: right;
+ } 
+
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 50%;
+    height:30px;
+    margin: 10px auto;
+}
+
+.icon {
+    padding: 6px;
+    background:#ebe6e6e7;
+    color:black;
+    min-width: 50px;
+    text-align: center;
+    border-radius:5px;
+    border:0.5px lightgray solid;
+}
+
+.input-field {
+    width:70%;
+    padding: 10px;
+    border:0.5px lightgray solid;
+    border-radius: 5px;
+}
+
+.input-field:focus {
+    border: 2px solid #ebe6e6e7;
+}
+
+/* Set a style for the submit button */
+.btn {
+    background-color:tomato;
+    color:white;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 70px;
+    font-size: 10px;
+    opacity: 0.9;
+    margin:0 561px;
+    font-size:12px;
+    border-radius: 6px;   
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn-icon {
+    padding: 6px;
+    background:tomato;
+    color:black;
+    min-width: 15px;
+    text-align: center;
+    border:0.5px tomato;
+}
+.radio{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+
+}
+#radio{
+    height:75px;
+
+}
+
+#radio .label{
+    width:34%;
+}
+#state{
+    width:70%;
+    border-radius:5px;
+}
+
+input:invalid {
+    border-color: red;
+}
+input,
+input:valid {
+    border-color:lightgreen;
+}
+#text-area{
+    height:50px;
+}
+#text-area i{
+ padding: 15px 10px !important;   
+}
