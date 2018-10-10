@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        
+        <script type="text/javascript">
+            window.onload = function() {
+                for (i = 1; i < localStorage.length; i++) {
+                    var responseTag = document.getElementById("details");
+                    var ptag = document.createElement("p");
+                    ptag.innerHTML =  localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i));
+                    responseTag.appendChild(ptag);
+                }   
+            }   
+        </script>
+        
+    </head>
+    <body>
+        <h2>Your Details.</h2>
+
+        <div id="details"> </div>
+    </body>
+</html>
