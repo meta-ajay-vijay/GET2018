@@ -1,0 +1,297 @@
+/*STYLING APPLIED TO ALL*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family:Verdana;	
+	text-decoration: none;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+	background-image: url("../images/bodybg.png");
+}
+
+.heading h1{
+	font-size: 35px;
+	color: #4F8EFF;
+	text-align: center;
+}
+
+.heading span{
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	color: grey;
+	padding-bottom: 50px;
+}
+
+#features, #screenshots, #reviews{
+	width: 80%;
+	margin: auto;
+}
+
+.div_flex {
+	display: flex;
+	justify-content: space-around;
+}
+
+#home, #features, #reviews {
+	padding: 100px 100px;
+}
+
+/*HEADER STYLING*/
+	#header {
+		background-image: url("../images/homebg.png");
+	}
+
+	.header_footer {
+		height: 3%;
+		padding-top: 20px;
+	}
+
+	.header_footer a {
+		color: white;
+	}
+
+	.header_footer li {
+		display: inline-flex;
+		color: white;
+		padding: 7px;
+	}
+
+/*HOME STYLING*/
+	#home {
+		background-image: url("../images/homebg.png");
+		background-size: cover;	
+	}
+
+	#home div {
+		width: 40%;
+	}
+
+	#home h1 {
+		font-size: 50px;
+		color: white;
+	}
+
+	#home input {
+		margin-top: 10px;
+		font-size: 14px;
+		border:none;
+		color: white;
+		padding: 13px;
+		width: 100px;
+		height: 40px;
+	}
+
+	#download_button {
+		background-color: tomato;
+		border-color: tomato;
+	}
+
+	#feature_button {
+		background-color: #5376E3;
+		border-color: #5376E3;
+	}
+
+/*FEATURES STYLING*/
+	#features h2 {
+		padding: 20px 0px 0px 20px;
+	}
+
+	#features p {
+		padding: 20px 20px;
+		color: grey;
+	}
+
+	#slider {
+		padding-top: 50px;
+		display: flex;
+		justify-content: center;
+	}
+
+/*SCREENSHOT STYLING*/
+	.mobile_pic {
+		width: 40%;
+		text-align: center;
+		position: relative;
+	}
+
+	.screenshot_part {
+		width: 40%;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.screenshot_part div, .screenshot_part div h2, .screenshot_part div p{
+		padding-bottom: 20px;
+	}
+
+	.rotate {
+		position: absolute;
+		z-index: -1;
+		display: block;
+		color: #DCDCDC;
+		transform: rotate(90deg);
+		top: 0px;
+		left: 250px;
+		font-size: 190px;
+		margin: 180px 0px 0px -140px;
+	}
+
+	#rainy_rotate {
+		margin-left: -80px;
+	}
+
+	.degree, .weather {
+		border-radius: 100%;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		padding: 25px 15px 0px 15px;
+		color: #FFFFFF;
+		position: absolute;
+		margin-left: 60px;
+	}
+
+	.degree {
+		top: 350px;
+		left: -20px;
+		background-color: #6A9FFB;
+	}
+
+	.weather {
+		top: 200px;
+		left: 300px;
+		background-color: #FCED6E;
+	}
+
+	.circles {
+		display: flex;
+		flex-direction: row;
+		max-width: 30px;
+		height: 30px;
+		border-color: #DCDCDC;
+		border-style: dashed;
+		color: #DCDCDC;
+		position: absolute;
+		background-color: #FFFFFF;
+		text-align: center;
+		border-radius: 100%;
+		z-index: 1;
+		padding: 25px 20px 0px 20px;
+	}
+
+	.circle_part {
+		position: relative;
+		justify-content: flex-start;
+	}
+
+	.circle_part * {
+		position: absolute;
+	}
+
+	#degree_circle {
+		left:60px;
+		z-index: -1;
+		padding: 24px 25px 24px 25px;
+	}
+
+	#weather_circle {
+		left: 120px;
+		z-index: -2;
+	}
+
+	#degree_circle_sunny {
+		left: 60px;
+		z-index: -1;
+		padding-left: 25px;
+		padding-right: 25px;	
+	}
+
+	#weather_circle_sunny {
+		left: 120px;
+		z-index: -2;
+	}
+
+/*REVIEW STYLING*/
+	.review_part {
+		font-size: 20px;
+		font-weight: bold;
+		display: flex;
+		padding-bottom: 40px;
+	}
+
+	.review_part div{
+		flex : 1;
+	}
+
+	.review_part p {
+		padding: 0px 40px 0px 35px;
+	}
+
+	.review_part div:before {
+		vertical-align: 10px;
+		content: open-quote;
+		font-size: 40px;
+		position: absolute;
+		color: #6388FB;
+	}
+
+	.review_part div:after {
+		content: close-quote;
+		font-size: 40px;
+		padding-left: 300px;
+		position: absolute;
+		color: #6388FB;
+	}
+
+	.writer {
+		font-size: 15px;
+		padding-left: 40px;
+	}
+
+/*DOWNLOAD STYLING*/
+	#download {
+		background-image: url("../images/downloadbg.png");
+		height: 300px;
+		padding-left: 200px;
+	}
+
+	#download_first {
+		color: white;
+		width: 30%;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#download_second img{
+		width: 50%;
+		margin: 90px 0px 0px 50px;
+	}
+
+	#download_first div {
+		padding-bottom: 30px;
+	}
+
+	#download h1 {
+		padding-bottom: 20px;
+	}
+
+/*FOOTER STYLING*/
+	#footer {
+		padding-top: 20px;
+		background-color: #383953;
+		background-size: cover;
+	}
+
+	#footer_span {
+		margin: 50px 150px 0;
+		text-align: center;
+		color: white;
+		line-height: 700%;
+	}
