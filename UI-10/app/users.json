@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "tinku",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 2,
+      "name": "chinkiya ke papa",
+      "phone": "7788994455",
+      "location": "Mumbai"
+    },
+    {
+      "id": 3,
+      "name": "chutku lal",
+      "phone": "7788994455",
+      "location": "Mumbai"
+    },
+    {
+      "id": 4,
+      "name": "chinky",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "name": "chintu",
+      "phone": "7894561230",
+      "location": "Metaube",
+      "id": 5
+    },
+    {
+      "name": "chutki",
+      "phone": "46567891230",
+      "location": "Mumbai",
+      "id": 6
+    }
+  ]
+}

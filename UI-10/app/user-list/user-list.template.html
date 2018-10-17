@@ -1,0 +1,104 @@
+<div class="container">
+
+    <div class="row py-2 mb-2 flex-nowrap justify-content-between align-items-end">
+        <div class="col-md-2 display-4 px-0">Users</div>
+        <div class="col-md-1 px-0">
+        <button class="btn" data-toggle="modal" data-target="#modalAddUser">Add user</button>
+        </div>
+    </div>
+
+    <div class="row py-2 flex-nowrap mb-4">
+        <div class="input-group col-md-11 px-0">
+            <input type="text" class="form-control" placeholder="Search Users by Name.." ng-model="search.name">
+        </div>
+        <div class="col-md-1">
+            <button class="btn">Search</button>
+        </div>
+    </div>
+
+
+    <div class="row my-2 justify-content-between">
+        <div class="card col-md-3 mx-1 flex-md-row mb-4 align-items-center" ng-repeat="user in $ctrl.users | filter:search">
+            
+            <button class="btn btn-link badge" data-toggle="modal" ng-click="
+            editUser(user.id)" data-target="#modalAddUser"><i class="fas fa-pencil-alt"></i></button>
+            
+            <div class="card-img-left flex-auto d-none d-lg-block"><i class="fas fa-user fa-7x"></i></div>
+            
+            <div class="card-body d-flex flex-column align-items-start">
+                <h3 class="mb-0">{{user.name}}</h3>
+                <p><i class="fas fa-phone"></i>{{user.phone}}</p>
+                <p><i class="fas fa-map-marker-alt"></i> {{user.location}}</p>
+                <p class="mb-1" style="visibility:hidden">{{user.id}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade " id="modalAddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Add user</h4>
+                <button class="btn btn-link btn-lg" type="button" class="close" data-dismiss="modal" arial-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-4" style="display:none">
+                    <label>Id</label>
+                    <input type="text" class="form-control" id="id" ng-model="user.id"/>
+                </div>
+                <div class="md-form mb-4">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" ng-model="user.name"/>
+                </div>
+                <div class="md-form mb-4">
+                    <label>Contact No</label>
+                    <input type="text" class="form-control" id="phone" ng-model="user.phone"/>
+                </div>
+                <div class="md-form mb-4">
+                    <label>Address</label>
+                    <input type="text" class="form-control" id="location" ng-model="user.location"/>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-end">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <input type="submit" value="Save" class="btn btn-primary" ng-click="postData()"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="modal fade" id="modalEditUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Edit user</h4>
+                <button class="btn btn-link btn-lg" type="button" class="close" data-dismiss="modal" arial-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-4">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" ng-model="user.name"/>
+                </div>
+                <div class="md-form mb-4">
+                    <label>Contact No</label>
+                    <input type="text" class="form-control" id="phone" ng-model="user.phone"/>
+                </div>
+                <div class="md-form mb-4">
+                    <label>Address</label>
+                    <input type="text" class="form-control" id="location" ng-model="user.location"/>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-end">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <input type="submit" value="Save" class="btn btn-primary" ng-click="postData()"/>
+            </div>
+        </div>
+    </div>
+</div> -->
