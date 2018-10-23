@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 2,
+      "name": "Vikas",
+      "phone": "7788994455",
+      "location": "Mumbai"
+    },
+    {
+      "id": 3,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 4,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 5,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 6,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 7,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 8,
+      "name": "Akshat",
+      "phone": "7788994455",
+      "location": "Jaipur"
+    },
+    {
+      "id": 9,
+      "name": "akshitaag",
+      "phone": "978977897",
+      "location": "mumbai"
+    },
+    {
+      "name": "wsrfwerf",
+      "phone": "12312312",
+      "location": "sdfsdf",
+      "id": 10
+    },
+    {
+      "name": "fgdfg",
+      "phone": "fgdfg",
+      "location": "ert24234",
+      "id": 11
+    }
+  ]
+}
