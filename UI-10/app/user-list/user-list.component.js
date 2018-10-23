@@ -54,6 +54,13 @@ angular.module('userList').
                 }
 
              $scope.resetUser = function(){
+                 let user = {
+                    "id" : "null",
+                    "name": "",
+                    "phone": "",
+                    "location": ""
+                  };
+                  $scope.user = user;
                 }
 
             $scope.show=function(userData){
