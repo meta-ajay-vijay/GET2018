@@ -24,7 +24,7 @@ angular.module('userList').
                 window.location.reload();
             };*/
             $scope.postData=function(){
-             if($scope.user.id == null){
+             if($scope.user.id === 'null'){
                     console.log("Post ho rha h");
                     $http({
                       method: 'POST',
